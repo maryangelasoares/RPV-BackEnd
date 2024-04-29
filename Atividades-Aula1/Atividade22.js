@@ -3,9 +3,8 @@ deve-se atribuir o resultado para uma variável C e mostrar seu conteúdo no con
 
 const prompt = require('prompt-sync')();
 
-// Solicita ao usuário que insira os valores A e B
-let A = parseInt(prompt("Digite o valor de A:"));
-let B = parseInt(prompt("Digite o valor de B:"));
+let A = parseInt(prompt("Digite o valor de A: "));
+let B = parseInt(prompt("Digite o valor de B: "));
 
 let C;
 

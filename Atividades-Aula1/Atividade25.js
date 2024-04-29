@@ -6,14 +6,12 @@ comprimento). O programa também deve mostrar a classificação desse terreno, d
 
 const prompt = require('prompt-sync')();
 
-// Solicita ao usuário que insira a largura e o comprimento do terreno
-let largura = parseFloat(prompt("Digite a largura do terreno (em metros):"));
-let comprimento = parseFloat(prompt("Digite o comprimento do terreno (em metros):"));
+let largura = parseFloat(prompt("Digite a largura do terreno (em metros): "));
+let comprimento = parseFloat(prompt("Digite o comprimento do terreno (em metros): "));
 
 // Calcula a área do terreno
 let area = largura * comprimento;
 
-// Exibe a área do terreno
 console.log("A área do terreno é de " + area + " m².");
 
 // Verifica a classificação do terreno e exibe a mensagem correspondente

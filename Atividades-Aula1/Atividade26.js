@@ -8,13 +8,11 @@ Código – Condição de Pagamento:
 
 const prompt = require('prompt-sync')();
 
-// Solicita ao usuário que insira o preço do produto e o código da condição de pagamento
-let precoProduto = parseFloat(prompt("Digite o preço do produto:"));
-let codigoCondicao = parseInt(prompt("Digite o código da condição de pagamento:\n1 - À vista em dinheiro ou cheque\n2 - À vista no cartão de crédito\n3 - Em duas vezes sem juros\n4 - Em duas vezes com juros de 10%"));
+let precoProduto = parseFloat(prompt("Digite o preço do produto: "));
+let codigoCondicao = parseInt(prompt("Digite o código da condição de pagamento:\n1 - À vista em dinheiro ou cheque\n2 - À vista no cartão de crédito\n3 - Em duas vezes sem juros\n4 - Em duas vezes com juros de 10%\n"));
 
 let valorFinal;
 
-// Calcula o valor a ser pago de acordo com o código da condição de pagamento
 switch (codigoCondicao) {
     case 1:
         valorFinal = precoProduto * 0.9; // 10% de desconto para pagamento à vista em dinheiro ou cheque
@@ -32,5 +30,4 @@ switch (codigoCondicao) {
         console.log("Código de condição de pagamento inválido.");
 }
 
-// Exibe o valor a ser pago
 console.log("O valor a ser pago é: R$ " + valorFinal.toFixed(2));

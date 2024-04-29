@@ -8,25 +8,22 @@ Classifique o IMC da seguinte forma:
 
 const prompt = require('prompt-sync')();
 
-// Solicita ao usuário que insira o peso e a altura da pessoa
-let peso = parseFloat(prompt("Digite o peso da pessoa (em kg):"));
-let altura = parseFloat(prompt("Digite a altura da pessoa (em metros):"));
+let peso = parseFloat(prompt("Digite o peso da pessoa (em kg): "));
+let altura = parseFloat(prompt("Digite a altura da pessoa (em metros): "));
 
-// Calcula o IMC usando a fórmula: IMC = peso / (altura * altura)
 let imc = peso / (altura * altura);
 
 // Classifica o IMC de acordo com os intervalos especificados
 let classificacao;
 if (imc < 18.5) {
-    classificacao = "Abaixo do Peso";
+    classificacao = "Abaixo do Peso.";
 } else if (imc >= 18.5 && imc < 24.9) {
     classificacao = "Peso Ideal";
 } else if (imc >= 25 && imc < 29.9) {
-    classificacao = "Excesso de Peso";
+    classificacao = "Excesso de Peso.";
 } else {
-    classificacao = "Obesidade";
+    classificacao = "Obesidade! Se Cuide.";
 }
 
-// Exibe o IMC e a classificação no console
 console.log("O Índice de Massa Corporal (IMC) da pessoa é: " + imc.toFixed(2) + " Kg/m²");
 console.log("Classificação: " + classificacao);

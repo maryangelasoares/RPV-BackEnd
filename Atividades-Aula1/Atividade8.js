@@ -1,14 +1,15 @@
-/* Crie um programa que leia a idade de uma pessoa expressa em anos, meses e dias e mostre-a expressa apenas em dias.*/
+/* 8: Crie um programa que leia a idade de uma pessoa expressa em anos, meses e dias e mostre-a expressa apenas em dias.*/
 
 const prompt = require('prompt-sync')();
 
-// Solicita ao usuário que insira a idade em anos, meses e dias
-let anos = parseInt(prompt("Digite a idade em anos:"));
-let meses = parseInt(prompt("Digite a idade em meses:"));
-let dias = parseInt(prompt("Digite a idade em dias:"));
+function calcularDataNasc(dataNascimento) {
+    const hoje = new Date();
+    const dataNasc = new Date(dataNascimento);
 
-// Calcula a idade em dias
-let idadeEmDias = (anos * 365) + (meses * 30) + dias;
+    let idadeAnos = hoje.getFullYear() - dataNasc.getFullYear();
+    return idadeAnos;
+}
 
-// Exibe a idade apenas em dias
-console.log("A idade expressa apenas em dias é: " + idadeEmDias + " dias.");
+const dataNascimento = prompt("Digite a data de nascimento (AAAA-MM-DD): ");
+const idadeEmAnos = calcularDataNasc(dataNascimento);
+console.log(`A idade em anos é: ${idadeEmAnos}`);

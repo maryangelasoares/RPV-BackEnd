@@ -2,10 +2,8 @@
 
 const prompt = require('prompt-sync')();
 
-// Solicita ao usuário que insira um número
-let numero = parseInt(prompt("Digite um número:"));
+let numero = parseInt(prompt("Digite um número: "));
 
-// Verifica se o número é par ou ímpar
 if (numero % 2 === 0) {
     console.log("O número " + numero + " é par.");
 } else {

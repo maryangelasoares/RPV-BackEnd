@@ -4,17 +4,16 @@ console “Em recuperação” e se a nota do aluno for menor que 50 exiba no co
 
 const prompt = require('prompt-sync')();
 
-// Solicita ao usuário que insira os dados do aluno
-let nome = prompt("Digite o nome do aluno:");
-let matricula = prompt("Digite a matrícula do aluno:");
-let disciplina = prompt("Digite a disciplina:");
-let nota = parseFloat(prompt("Digite a nota do aluno:"));
+let nome = prompt("Digite o nome do aluno: ");
+let matricula = prompt("Digite a matrícula do aluno: ");
+let disciplina = prompt("Digite a disciplina: ");
+let nota = parseFloat(prompt("Digite a nota do aluno: "));
 
-// Verifica a nota do aluno e exibe o resultado no console
+
 if (nota >= 60) {
-    console.log("Aprovado");
+    console.log("Aprovado.");
 } else if (nota >= 50) {
-    console.log("Em recuperação");
+    console.log("Em recuperação.");
 } else {
-    console.log("Reprovado");
+    console.log("Reprovado.");
 }

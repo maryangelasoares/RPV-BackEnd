@@ -11,7 +11,6 @@ com o critério da distribuição ótima. */
 
 const prompt = require('prompt-sync')();
 
-// Definição dos valores das notas
 const notas = [100, 50, 20, 10, 5, 2, 1];
 
 // Função para calcular a distribuição das notas
@@ -38,7 +37,6 @@ function distribuirNotas(valor) {
     }
 }
 
-// Solicita ao usuário que informe o valor do saque
 let valorSaque = parseInt(prompt("Informe o valor do saque (sem casas decimais):"));
 
 // Calcula e exibe a distribuição das notas

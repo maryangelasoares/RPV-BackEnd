@@ -3,8 +3,7 @@ Ex: 5! = 5 X 4 X 3 X 2 X 1 = 120. */
 
 const prompt = require('prompt-sync')();
 
-// Solicita ao usuário que insira um número
-let numero = parseInt(prompt("Digite um número para calcular o fatorial:"));
+let numero = parseInt(prompt("Digite um número para calcular o fatorial: "));
 
 // Inicializa o resultado do fatorial como 1
 let resultado = 1;
@@ -19,5 +18,4 @@ for (let i = numero; i >= 1; i--) {
     }
 }
 
-// Exibe a sequência de valores e o resultado
 console.log(numero + "! = " + sequencia + " = " + resultado);

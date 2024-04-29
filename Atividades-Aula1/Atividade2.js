@@ -2,7 +2,5 @@
 
 const prompt = require('prompt-sync')();
 
-//Solicitando que o usuário digite seu nome
 let nome = prompt ("Digite seu nome? ");
-//Exibe seu nome
-console.log ("Bem vindo, " + nome,"!");
+console.log ("Bem vindo(a), " + nome,"!");
