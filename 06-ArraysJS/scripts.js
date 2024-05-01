@@ -233,7 +233,7 @@ frutasCopia = frutas.slice(1)
 console.log(frutasCopia)
 
 console.log("\nA partir do ultimo indice");
-frutasCopia = frutas.slice(-1)
+frutasCopia = frutas.slice(-1) //(-) utiliza a posição no array de trás pra frente.
 console.log(frutasCopia)
 
 console.log("\nA partir do penultimo indice");
