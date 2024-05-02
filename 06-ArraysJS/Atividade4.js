@@ -20,7 +20,6 @@ for (let i = 1; i <= 7; i++) {
     let peso = parseFloat(prompt("Digite o peso da pessoa " + i + " (em Kg): "));
     let altura = parseFloat(prompt("Digite a altura da pessoa " + i + " (em metros): "));
 
-    
     pesos.push(peso);
     alturas.push(altura);
 

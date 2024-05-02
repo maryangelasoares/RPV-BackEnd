@@ -6,54 +6,43 @@ c) A média de idade do grupo;
 d) A média de idade dos homens; 
 e) Quantas mulheres tem mais de 20 anos. */
 
+// (+=) é atribuição de valores.
+
 const prompt = require('prompt-sync')();
 
-// Arrays para armazenar os dados das pessoas
-let nomes = [];
-let idades = [];
-let sexos = [];
+let pessoas = [];
+let homens = 0;
+let mulheres = 0;
+let somaIdadeGrupo = 0;
+let somaIdadeHomens = 0;
+let mulheresMaisDe20 = 0;
 
-// Variáveis para contar o número de homens, mulheres e mulheres com mais de 20 anos
-let numHomens = 0;
-let numMulheres = 0;
-let numMulheresMais20 = 0;
-
-// Loop para ler os dados de 5 pessoas
-for (let i = 1; i <= 5; i++) {
-    let nome = prompt("Digite o nome da pessoa " + i + ": ");
-    let idade = parseInt(prompt("Digite a idade da pessoa " + i + ": "));
-    let sexo = prompt("Digite o sexo da pessoa " + i + " (M para masculino, F para feminino): ").toUpperCase();
-
-    nomes.push(nome);
-    idades.push(idade);
-    sexos.push(sexo);
+for (let i = 0; i < 5; i++) {
+    let nome = prompt("Digite o nome da pessoa " + (i + 1) + ": ");
+    let idade = parseInt(prompt("Digite a idade da pessoa " + (i + 1) + ": "));
+    let sexo = prompt("Digite o sexo da pessoa " + (i + 1) + " (M/F): ").toUpperCase();
 
     if (sexo === 'M') {
-        numHomens++;
+        homens++;
+        somaIdadeHomens += idade;
     } else {
-        numMulheres++;
+        mulheres++;
+        if (idade > 20)
+            mulheresMaisDe20++;
     }
+    somaIdadeGrupo += idade;
 
-    // Verifica se a pessoa é mulher e tem mais de 20 anos
-    if (sexo === 'F' && idade > 20) {
-        numMulheresMais20++;
-    }
+    pessoas.push({ nome: nome, idade: idade, sexo: sexo });
 }
 
-// Calcula a média de idade do grupo
-let somaIdades = idades.reduce((total, idade) => total + idade, 0);
-let mediaIdadeGrupo = somaIdades / idades.length;
+let mediaIdadeGrupo = somaIdadeGrupo / 5;
+let mediaIdadeHomens = homens > 0 ? somaIdadeHomens / homens : 0;
+//Se homens for maior que zero, isso significa que pelo menos um homem foi cadastrado. Se isso for verdadeiro, 
+//a expressão após o '?' é atribuída à variável mediaIdadeHomens.
 
-// Filtra as idades dos homens
-let idadesHomens = idades.filter((idade, index) => sexos[index] === 'M');
-
-// Calcula a média de idade dos homens
-let somaIdadesHomens = idadesHomens.reduce((total, idade) => total + idade, 0);
-let mediaIdadeHomens = somaIdadesHomens / idadesHomens.length;
-
-// Exibe os resultados no console
-console.log("Quantidade de homens cadastrados: ", numHomens);
-console.log("Quantidade de mulheres cadastradas: ", numMulheres);
-console.log("Média de idade do grupo: ", mediaIdadeGrupo.toFixed(2));
-console.log("Média de idade dos homens: ", mediaIdadeHomens.toFixed(2));
-console.log("Quantidade de mulheres com mais de 20 anos: ", numMulheresMais20);
+console.log("\nResultados:");
+console.log("a) Quantidade de homens cadastrados: " + homens);
+console.log("b) Quantidade de mulheres cadastradas: " + mulheres);
+console.log("c) Média de idade do grupo: " + mediaIdadeGrupo.toFixed(2));
+console.log("d) Média de idade dos homens: " + mediaIdadeHomens.toFixed(2));
+console.log("e) Quantidade de mulheres com mais de 20 anos: " + mulheresMaisDe20);

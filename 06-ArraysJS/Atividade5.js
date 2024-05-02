@@ -4,12 +4,6 @@ Ao final, mostre no console a média geral do aluno no curso. */
 
 const prompt = require('prompt-sync')();
 
-// Função para calcular a média de um array de notas
-function calcularMedia(notas) {
-    let soma = notas.reduce((total, nota) => total + nota, 0);
-    return soma / notas.length;
-}
-
 let aluno = [];
 
 aluno.push(prompt("Digite a matrícula do aluno: "));
@@ -25,6 +19,11 @@ for (let i = 0; i < 5; i++) {
 
 aluno.push(notas);
 
+function calcularMedia(notas) {
+    let soma = notas.reduce((total, nota) => total + nota, 0);
+    return soma / notas.length;
+}
+
 let mediaGeral = calcularMedia(notas);
 
-console.log(`A média geral do aluno no curso é: ${mediaGeral.toFixed(2)}`);
+console.log(`A média geral do aluno no curso é: ${mediaGeral.toFixed(2)}.`);
