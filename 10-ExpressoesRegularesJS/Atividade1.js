@@ -4,7 +4,6 @@
 
     const prompt = require('prompt-sync')();
 
-    // Função para validar o CPF
     function validarCPF(cpf) {
         // Remover caracteres não numéricos
         cpf = cpf.replace(/\D/g, '');
@@ -13,39 +12,32 @@
         if (!/^\d{11}$/.test(cpf) || /^(.)\1+$/.test(cpf)) {
             return false;
         }
-    
         return true;
     }
     
-    // Função para validar o formato do telefone
     function validarTelefone(telefone) {
         // Verificar se o telefone corresponde ao formato (DDD) X XXXX-XXXX
         const regexTelefone = /^\(\d{3}\) \d \d{4}-\d{4}$/;
         if (!regexTelefone.test(telefone)) {
             return false;
         }
-    
         return true;
     }
     
-    // Função para validar o sexo
     function validarSexo(sexo) {
         // Verificar se o sexo é M, F ou O (masculino, feminino ou outros)
         if (!/^[MmFfOo]$/.test(sexo)) {
             return false;
         }
-    
         return true;
     }
     
-    // Função para validar a data de nascimento
     function validarDataNascimento(data) {
-        // Verificar se a data corresponde ao formato DD/MM/AAAA
+        // Verificar se a data corresponde ao formato DD/MM/AA
         const regexData = /^\d{2}\/\d{2}\/\d{4}$/;
         if (!regexData.test(data)) {
             return false;
-        }
-    
+        }   
         return true;
     }
     
@@ -74,13 +66,13 @@
     
         // Exibir dados
         console.log("\nDados do Aluno:");
-        console.log("Nome:", nome);
-        console.log("Sobrenome:", sobrenome);
-        console.log("CPF:", cpf);
-        console.log("Sexo:", sexo.toUpperCase());
-        console.log("Data de Nascimento:", dataNascimento);
-        console.log("Endereço:", endereco);
-        console.log("Telefone:", telefone);
+        console.log("Nome: ", nome);
+        console.log("Sobrenome: ", sobrenome);
+        console.log("CPF: ", cpf);
+        console.log("Sexo: ", sexo.toUpperCase());
+        console.log("Data de Nascimento: ", dataNascimento);
+        console.log("Endereço: ", endereco);
+        console.log("Telefone: ", telefone);
     } catch (erro) {
         console.log("Erro:", erro.message);
     }
