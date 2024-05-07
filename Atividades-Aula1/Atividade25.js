@@ -9,12 +9,10 @@ const prompt = require('prompt-sync')();
 let largura = parseFloat(prompt("Digite a largura do terreno (em metros): "));
 let comprimento = parseFloat(prompt("Digite o comprimento do terreno (em metros): "));
 
-// Calcula a área do terreno
 let area = largura * comprimento;
 
 console.log("A área do terreno é de " + area + " m².");
 
-// Verifica a classificação do terreno e exibe a mensagem correspondente
 if (area < 100) {
     console.log("Classificação: TERRENO POPULAR");
 } else if (area >= 100 && area <= 500) {
