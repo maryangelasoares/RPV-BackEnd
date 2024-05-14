@@ -73,14 +73,14 @@ const pessoasMaisDeVinteAnos = grupoDePessoas.filter(pessoa => pessoa.idade > 20
 const pessoasMenosDeDezAnos = grupoDePessoas.filter(pessoa => pessoa.idade < 10);
 
 console.log("\nResultados:");
-console.log("Média de idade do grupo:", mediaIdade.toFixed(2));
-console.log("Pessoa mais velha:", pessoaMaisVelha);
-console.log("Pessoa mais nova:", pessoaMaisNova);
-console.log("Pessoas com mais de 20 anos:", pessoasMaisDeVinteAnos);
-console.log("Pessoas com menos de 10 anos:", pessoasMenosDeDezAnos);
-console.log("Quantidade de pessoas do sexo masculino:", grupoDePessoas.filter(pessoa => pessoa.sexo.toUpperCase() === 'M').length);
-console.log("Quantidade de pessoas do sexo feminino:", grupoDePessoas.filter(pessoa => pessoa.sexo.toUpperCase() === 'F').length);
-console.log("Quantidade de pessoas que não informaram o sexo ou marcaram outros:", grupoDePessoas.filter(pessoa => ['P', 'O'].includes(pessoa.sexo.toUpperCase())).length);
-console.log("Quantidade de pessoas casadas:", grupoDePessoas.filter(pessoa => pessoa.estadoCivil.toUpperCase() === 'C').length);
-console.log("Quantidade de pessoas solteiras:", grupoDePessoas.filter(pessoa => pessoa.estadoCivil.toUpperCase() === 'S').length);
-console.log("Quantidade de pessoas viúvas:", grupoDePessoas.filter(pessoa => pessoa.estadoCivil.toUpperCase() === 'V').length);
+console.log("Média de idade do grupo: ", mediaIdade.toFixed(2));
+console.log("Pessoa mais velha: ", pessoaMaisVelha);
+console.log("Pessoa mais nova: ", pessoaMaisNova);
+console.log("Pessoas com mais de 20 anos: ", pessoasMaisDeVinteAnos);
+console.log("Pessoas com menos de 10 anos: ", pessoasMenosDeDezAnos);
+console.log("Quantidade de pessoas do sexo masculino: ", grupoDePessoas.filter(pessoa => pessoa.sexo.toUpperCase() === 'M').length);
+console.log("Quantidade de pessoas do sexo feminino: ", grupoDePessoas.filter(pessoa => pessoa.sexo.toUpperCase() === 'F').length);
+console.log("Quantidade de pessoas que não informaram o sexo ou marcaram outros: ", grupoDePessoas.filter(pessoa => ['P', 'O'].includes(pessoa.sexo.toUpperCase())).length);
+console.log("Quantidade de pessoas casadas: ", grupoDePessoas.filter(pessoa => pessoa.estadoCivil.toUpperCase() === 'C').length);
+console.log("Quantidade de pessoas solteiras: ", grupoDePessoas.filter(pessoa => pessoa.estadoCivil.toUpperCase() === 'S').length);
+console.log("Quantidade de pessoas viúvas: ", grupoDePessoas.filter(pessoa => pessoa.estadoCivil.toUpperCase() === 'V').length);
