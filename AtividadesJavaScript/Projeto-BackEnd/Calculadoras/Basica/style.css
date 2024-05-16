@@ -1,0 +1,64 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(./background-calc-basica.jpg);
+    background-repeat: no-repeat;
+    background-position: top right, center;
+    background-size: cover;
+}
+.voltar {
+    width: 100px;
+    cursor: pointer;
+}
+
+.calculadora {
+    color: #de6f00;
+    background-color: #fee09f;
+    border: 2px solid #6f6f6f;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 20px 20px 10px 0px rgba(165, 99, 0, 0.226);
+}
+
+.display {
+    width: 295.25px;
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 30px;
+    border: 1px solid #6f6f6f;
+    border-radius: 5px;
+    text-align: right;
+}
+
+.botoes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+button {
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+button:hover{
+    background-color: #fc8d2c63;
+}
+
+.igual {
+    background-color: #f59637;
+    color: #fff;
+}
+
+.igual:hover{
+    background-color: #b15e0b;
+    transform: scale(1.2);
+}
