@@ -1,0 +1,32 @@
+<!--Crie um programa que leia a largura e o comprimento de um terreno
+retangular, calculando e mostrando a sua área em m² (largura x comprimento).
+O programa também deve mostrar a classificação desse terreno, de acordo com a lista abaixo:
+- Abaixo de 100m² = TERRENO POPULAR;
+- Entre 100m² e 500m² = TERRENO MASTER;
+- Acima de 500m² = TERRENO VIP. -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<link>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imobiliária RPV</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>CALCULADORA DE ÁREA</h1>
+    <h4> Calcule abaixo o tamanho em m² de seu terreno </h4>
+
+    <label for="largura">Largura em metros:</label>
+    <input type="number" id="largura" name="largura"><br>
+
+    <label for="comprimento">Comprimento em metros:</label>
+    <input type="number" id="comprimento" name="comprimento"><br>
+
+    <button onclick="calcularArea()">Calcular Área</button>
+
+    <p id="resultado"></p>
+
+    <script src="script.js"></script>
+</body>
+</html>
