@@ -1,0 +1,63 @@
+<!-- Utilizando os conceitos de Orientação a Objetos: 
+     Em uma clínica veterinária, é necessário efetuar o cadastro de pets. 
+     Crie um programa que leia os dados desses pets, sendo um cachorro e um gato.  
+     Os dados são: nome, sexo, nome do dono(a), telefone do dono(a), raça, cor, idade, peso e altura. 
+     No final exiba no console todas as informações desses pets. -->
+
+     <!DOCTYPE html>
+     <html>
+     <head>
+         <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link rel="stylesheet" href="style.css">
+         <title>Cadastro de Pets</title>
+     </head>
+     
+     <body>
+         <h1>CADASTRO DE PETS</h1>
+     
+         <div>
+             <h2>Cadastro do Cachorro</h2>
+             <form id="form-cachorro">
+                 Nome: <input type="text" id="nomeCachorro"><br>
+                 Sexo: <input type="text" id="sexoCachorro"><br>
+                 Nome do Dono: <input type="text" id="donoCachorro"><br>
+                 Telefone do Dono: <input type="number" id="telefoneCachorro"><br>
+                 Raça: <input type="text" id="racaCachorro"><br>
+                 Cor: <input type="text" id="corCachorro"><br>
+                 Idade: <input type="number" id="idadeCachorro"><br>
+                 Peso: <input type="number" id="pesoCachorro"><br>
+                 Altura: <input type="number" id="alturaCachorro"><br>
+                 <div class="botao">
+                    <button type="button" onclick="registroCachorro()">Registrar Cachorro</button>
+                    <button type="button" onclick="limparFormulario('form-cachorro')">Limpar Dados</button>
+                </div>
+             </form>
+             <p id="cachorro-Info"></p>
+         </div>
+     
+         <div>
+             <h2>Cadastro do Gato</h2>
+             <form id="form-gato">
+                 Nome: <input type="text" id="nomeGato"><br>
+                 Sexo: <input type="text" id="sexoGato"><br>
+                 Nome do Dono: <input type="text" id="donoGato"><br>
+                 Telefone do Dono: <input type="number"  id="telefoneGato"><br>
+                 Raça: <input type="text" id="racaGato"><br>
+                 Cor: <input type="text" id="corGato"><br>
+                 Idade: <input type="number" id="idadeGato"><br>
+                 Peso: <input type="number" id="pesoGato"><br>
+                 Altura: <input type="number" id="alturaGato"><br>
+                 <div class="botao">
+                    <button type="button" onclick="registroGato()">Registrar Gato</button>
+                    <button type="button" onclick="limparFormulario('form-gato')">Limpar Dados</button>
+                </div>
+             </form>
+             <p id="gato-Info"></p>
+         </div>
+     
+         <script src="script.js"></script>
+     </body>
+     
+     </html>
+     

@@ -1,0 +1,49 @@
+<!-- 1. Crie um programa que leia os dados de um usuário: 
+   nome, sobrenome, CPF (11 digitos), sexo (M-Masculino, F-Feminino, O-Outros), data de nascimento, endereço e telefone 
+   e exiba todas as informações desse usuário. -->
+
+   <!DOCTYPE html>
+   <html lang="pt-br">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Leitor de Dados de Usuário</title>
+       <link rel="stylesheet" href="style.css">
+   </head>
+   <body>
+       <h1>DADOS DO USUÁRIO</h1>
+   
+       <form id="formulario">
+           <label for="nome">Nome:</label>
+           <input type="text" id="nome" name="nome" required>
+   
+           <label for="sobrenome">Sobrenome:</label>
+           <input type="text" id="sobrenome" name="sobrenome" required>
+   
+           <label for="cpf">CPF:</label>
+           <input type="text" id="cpf" name="cpf" required maxlength="11">
+   
+           <label for="sexo">Sexo:</label>
+           <select id="sexo" name="sexo" required>
+               <option value="M">Masculino</option>
+               <option value="F">Feminino</option>
+               <option value="O">Outro</option>
+           </select>
+   
+           <label for="dataNascimento">Data de Nascimento:</label>
+           <input type="date" id="dataNascimento" name="dataNascimento" required>
+   
+           <label for="endereco">Endereço:</label>
+           <input type="text" id="endereco" name="endereco" required>
+   
+           <label for="telefone">Telefone:</label>
+           <input type="tel" id="telefone" name="telefone" required>
+   
+           <button type="btnCadastrar">ENVIAR DADOS</button>
+       </form>
+   
+       <div id="informacoesUsuario"></div>
+   
+       <script src="script.js"></script>
+   </body>
+   </html>
