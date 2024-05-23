@@ -1,10 +1,73 @@
-<!-- Utilizando os conceitos de Orientação a Objetos:
-     Em um banco XYZ Bank, é necessário efetuar a abertura de uma conta bancária para um cliente.
-     Crie um programa que leia os dados desse cliente: 
-     Nome completo, Tipo Pessoa (Física ou Jurídica), endereço (Logradourdo, Número, Bairro, CEP, Municipio e Estado) 
-     e telefone de contato((032) 00000-0000) 
-        Se Pessoa Física solicitar também: CPF (11 dígitos), Data de Nascimento, Sexo (M-Masculino, F-Feminino, O-Outros)
-        Se Pessoa Jurídica solicitar também: CNPJ (14 dígitos)
-    Após isso, dar a opção ao cliente de escolher uma conta bancária ( Poupança ou Corrente ).
-    Se a conta bancária for poupança, calcular o rendimento do saldo da conta em 3% ao mês, exibir o rendimento Em 1 ano, 2 anos e 5 anos.
-    Se a conta bancária for corrente, aplicar uma taxa de 1,75% sobre o valor sacado a partir do 3 saque. -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XYZ Bank</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Abertura de Conta | XYZ Bank</h1>
+        <form id="formularioConta">
+            <h2>Dados do Cliente</h2>
+            <label for="nome">Nome Completo:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="tipoPessoa">Tipo Pessoa:</label>
+            <select id="tipoPessoa" name="tipoPessoa"  required >
+                <option value="" selected disabled>Escolha</option>
+                <option value="Fisica">Física</option>
+                <option value="Juridica">Jurídica</option>
+            </select>
+
+            <label for="logradouro">Logradouro:</label>
+            <input type="text" id="logradouro" name="logradouro" required>
+            <label for="numero">Número:</label>
+            <input type="text" id="numero" name="numero" required>
+            <label for="bairro">Bairro:</label>
+            <input type="text" id="bairro" name="bairro" required>
+            <label for="cep">CEP:</label>
+            <input type="text" id="cep" name="cep" required>
+            <label for="municipio">Município:</label>
+            <input type="text" id="municipio" name="municipio" required>
+            <label for="estado">Estado:</label>
+            <input type="text" id="estado" name="estado" required>
+
+            <label for="telefone">Telefone:</label>
+            <input type="text" id="telefone" name="telefone" required>
+
+            <div id="dadosFisica">
+                <label for="cpf">CPF:</label>
+                <input type="text" id="cpf" name="cpf">
+                <label for="dataNascimento">Data de Nascimento:</label>
+                <input type="date" id="dataNascimento" name="dataNascimento">
+                <label for="sexo">Sexo:</label>
+                <select id="sexo" name="sexo">
+                    <option value="M">Masculino</option>
+                    <option value="F">Feminino</option>
+                    <option value="O">Outros</option>
+                </select>
+            </div>
+
+            <div id="dadosJuridica" style="display: none;">
+                <label for="cnpj">CNPJ:</label>
+                <input type="text" id="cnpj" name="cnpj">
+            </div>
+
+            <h2>Escolha da Conta</h2>
+            <label for="tipoConta">Tipo de Conta:</label>
+            <select id="tipoConta" name="tipoConta" required>
+                <option value="" selected disabled>Escolha</option>
+                <option value="Poupanca">Poupança</option>
+                <option value="Corrente">Corrente</option>
+            </select>
+
+            <button type="button" onclick="abrirConta()">Abrir Conta</button>
+        </form>
+
+        <div id="resultado" class="resultado"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

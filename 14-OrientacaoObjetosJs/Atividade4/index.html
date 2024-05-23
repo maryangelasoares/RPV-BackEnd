@@ -1,56 +1,107 @@
 <!-- Utilizando os conceitos de Orientação a Objetos: 
-     Em uma clínica veterinária, é necessário efetuar o cadastro de pets. 
-     Crie um programa que leia os dados desses pets, sendo um cachorro e um gato.  
-     Os dados são: nome, sexo, nome do dono(a), telefone do dono(a), raça, cor, idade, peso e altura. 
-     No final exiba no console todas as informações desses pets. -->
+     Crie um programa que leia o número de fornecedores a serem cadastrados.  
+     Após isso, o programa deve ler os dados desses fornecedores: 
+     nome, sobrenome, CNPJ (14 digitos), sexo (M-Masculino, F-Feminino, O-Outros), data de nascimento, 
+     endereço (Logradourdo, Número, Bairro, CEP, Municipio e Estado) e telefone ((032) 00000-0000) 
+     e exiba no console todas as informações desses fornecedores. -->
 
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Cadastro de Pets</title>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Cadastro de Fornecedores</title>
+     <!--<link rel="icon" href="caminho/para/o/favicon.png" type="image/png">-->
+     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>CADASTRO DE PETS</h1>
+     <div class="bloco-Info">
+          <form>
+               <div class="max-fornecedor">
+                    <label for="maxFornecedores">Máximo de Fornecedores</label>
+                    <input type="number" id="maxFornecedores" placeholder="Quantidade Máxima..." />
+               </div>
 
-    <div>
-        <h2>Cadastro do Cachorro</h2>
-        <form id="form-cachorro">
-            Nome: <input type="text" id="nomeCachorro"><br>
-            Sexo: <input type="text" id="sexoCachorro"><br>
-            Nome do Dono: <input type="text" id="donoCachorro"><br>
-            Telefone do Dono: <input type="number" id="telefoneCachorro"><br>
-            Raça: <input type="text" id="racaCachorro"><br>
-            Cor: <input type="text" id="corCachorro"><br>
-            Idade: <input type="number" id="idadeCachorro"><br>
-            Peso: <input type="number" id="pesoCachorro"><br>
-            Altura: <input type="number" id="alturaCachorro"><br>
-            <button type="button" onclick="registroCachorro()">Registrar Cachorro</button>
-        </form>
-        <p id="cachorro-Info"></p>
-    </div>
+               <h1>REGISTRO DE FORNECEDORES</h1>
 
-    <div>
-        <h2>Cadastro do Gato</h2>
-        <form id="form-gato">
-            Nome: <input type="text" id="nomeGato"><br>
-            Sexo: <input type="text" id="sexoGato"><br>
-            Nome do Dono: <input type="text" id="donoGato"><br>
-            Telefone do Dono: <input type="number"  id="telefoneGato"><br>
-            Raça: <input type="text" id="racaGato"><br>
-            Cor: <input type="text" id="corGato"><br>
-            Idade: <input type="number" id="idadeGato"><br>
-            Peso: <input type="number" id="pesoGato"><br>
-            Altura: <input type="number" id="alturaGato"><br>
-            <button type="button" onclick="registroGato()">Registrar Gato</button>
-        </form>
-        <p id="gato-Info"></p>
-    </div>
+               <div class="form-fornecedores">
 
-    <script src="script.js"></script>
+                    <label>Nome da Empresa</label>
+                    <input type="text" id="empresaNome" placeholder="Nome da Empresa" required /><br><br>
+
+                    <label>CNPJ da Empresa</label>
+                    <input type="text" id="cnpjEmpresa" pattern="\d{14}\" placeholder="CNPJ da Empresa"
+                         required /><br><br>
+
+                    <label>Representante</label>
+                    <input type="text" id="fornecedorNome" placeholder="Nome e Sobrenome" required /><br><br>
+
+                    <label>Telefone</label>
+                    <input type="tel" id="telefone" pattern="\(\d{2}\) \d{5}-\d{4}" placeholder="(00) 99999-9999"
+                         required /><br><br>
+
+                    <label>Sexo:</label>
+                    <select id="sexoRepresentante">
+                         <option value="" selected disabled>Escolha uma opção</option>
+                         <option value="Masculino">Masculino</option>
+                         <option value="Feminino">Feminino</option>
+                         <option value="Outros">Outros</option>
+                    </select><br><br>
+
+                    <label>Data de Nascimento</label>
+                    <input type="date" id="data" required /><br><br>
+
+                    <fieldset id="endereco">
+                         <legend>Endereço</legend>
+                         <label for="logradouro">Logradouro:</label>
+                         <input type="text" id="logradouro" placeholder="Rua, Avenida ..." required><br><br>
+
+                         <label for="numero">Número:</label>
+                         <input type="text" id="numero" placeholder="Nº ou S/N" required><br><br>
+
+                         <label for="bairro">Bairro:</label>
+                         <input type="text" id="bairro" placeholder="Centro" required><br><br>
+
+                         <label for="cep">CEP:</label>
+                         <input type="text" id="cep" pattern="\d{5}-\d{3}" placeholder="00000-000" required><br><br>
+
+                         <label for="municipio">Município:</label>
+                         <input type="text" id="municipio" placeholder="Cidade" required><br><br>
+
+                         <label for="estado">Estado:</label>
+                         <input type="text" id="estado" placeholder="Estado" required>
+                    </fieldset><br><br>
+               </div>
+               <input type="submit" value="Registrar Fornecedor">
+          </form>
+
+          <table id="tabelaForncedores">
+               <thead>
+                    <tr>
+                         <th scope="col">ID</th>
+                         <th scope="col">Empresa</th>
+                         <th scope="col">CNPJ</th>
+                         <th scope="col">Representante</th>
+                         <th scope="col">Telefone</th>
+                         <th scope="col">Sexo</th>
+                         <th scope="col">Data de Nascimento</th>
+                         <th scope="col">Endereço</th>
+
+                    </tr>
+               </thead>
+               <tbody id="tabelaForne">
+                    <tr>
+                         <!-- Registros aqui. -->
+                    </tr>
+               </tbody>
+          </table>
+     </div>
+
+     <button id="LimparDados">Limpar Dados</button>
+
+     <script src="script.js"></script>
 </body>
 
 </html>

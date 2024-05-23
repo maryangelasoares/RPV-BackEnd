@@ -1,81 +1,102 @@
-class Pets {
-    constructor(nome, sexo, dono, telefoneDono, raca, cor, idade, peso, altura) {
-        this.nome = nome;
-        this.sexo = sexo;
-        this.dono = dono;
-        this.telefone = telefoneDono;
-        this.raca = raca;
-        this.cor = cor;
-        this.idade = idade;
-        this.peso = peso;
-        this.altura = altura;
-    }
-
-    getDetails() {
-        return `
-        Nome: ${this.nome} |
-        Sexo: ${this.sexo} |
-        Nome do Dono: ${this.dono} |
-        Telefone do Dono: ${this.telefone} |
-        Raça: ${this.raca} |
-        Cor: ${this.cor} |
-        Idade: ${this.idade} anos |
-        Peso: ${this.peso} kg |
-        Altura: ${this.altura} cm.
-        `;
+class Fornecedor {
+    constructor(id, empresaNome, cnpjEmpresa, fornecedorNome, telefone, sexoRepresentante, dataNascimento, endereco) {
+        this.id = id;
+        this.empresaNome = empresaNome;
+        this.cnpjEmpresa = cnpjEmpresa;
+        this.fornecedorNome = fornecedorNome;
+        this.telefone = telefone;
+        this.sexoRepresentante = sexoRepresentante;
+        this.dataNascimento = dataNascimento;
+        this.endereco = endereco;
     }
 }
 
-// Classe Dog que herda de Pet
-class Cachorro extends Pets {
-    constructor(nome, sexo, dono, telefoneDono, raca, cor, idade, peso, altura) {
-        super(nome, sexo, dono, telefoneDono, raca, cor, idade, peso, altura);
+class Endereco {
+    constructor(logradouro, numero, bairro, cep, municipio, estado) {
+        this.logradouro = logradouro;
+        this.numero = numero;
+        this.bairro = bairro;
+        this.cep = cep;
+        this.municipio = municipio;
+        this.estado = estado;
+    }
+
+    formatarEndereco() {
+        return `${this.logradouro}, ${this.numero}, ${this.bairro}, ${this.cep}, ${this.municipio}, ${this.estado}`;
     }
 }
 
-// Classe Cat que herda de Pet
-class Gato extends Pets {
-    constructor(nome, sexo, dono, telefoneDono, raca, cor, idade, peso, altura) {
-        super(nome, sexo, dono, telefoneDono, raca, cor, idade, peso, altura);
+let fornecedores = []; // Array para armazenar os fornecedores
+let fornecedorId = 1; // ID inicial para fornecedores
+
+document.querySelector('form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Impede o envio do formulário
+
+    const maxFornecedores = document.getElementById('maxFornecedores').value;
+    if (fornecedores.length >= maxFornecedores) {
+        alert("Número máximo de fornecedores atingido.");
+        return;
     }
+
+    const empresaNome = document.getElementById('empresaNome').value;
+    const cnpjEmpresa = document.getElementById('cnpjEmpresa').value;
+    const fornecedorNome = document.getElementById('fornecedorNome').value;
+    const telefone = document.getElementById('telefone').value;
+    const sexoRepresentante = document.getElementById('sexoRepresentante').value;
+    const dataNascimento = document.getElementById('data').value;
+
+    const endereco = new Endereco(
+        document.getElementById('logradouro').value,
+        document.getElementById('numero').value,
+        document.getElementById('bairro').value,
+        document.getElementById('cep').value,
+        document.getElementById('municipio').value,
+        document.getElementById('estado').value
+    );
+
+    const fornecedor = new Fornecedor(
+        fornecedorId++,
+        empresaNome,
+        cnpjEmpresa,
+        fornecedorNome,
+        telefone,
+        sexoRepresentante,
+        dataNascimento,
+        endereco
+    );
+
+    fornecedores.push(fornecedor);
+    adicionarFornecedorNaTabela(fornecedor);
+    limparFormulario();
+});
+
+// Função para adicionar um fornecedor na tabela
+function adicionarFornecedorNaTabela(fornecedor) {
+    const tabelaFornecedores = document.getElementById('tabelaForne');
+    const novaLinha = document.createElement('tr');
+
+    novaLinha.innerHTML = `
+        <td>${fornecedor.id}</td>
+        <td>${fornecedor.empresaNome}</td>
+        <td>${fornecedor.cnpjEmpresa}</td>
+        <td>${fornecedor.fornecedorNome}</td>
+        <td>${fornecedor.telefone}</td>
+        <td>${fornecedor.sexoRepresentante}</td>
+        <td>${fornecedor.dataNascimento}</td>
+        <td>${fornecedor.endereco.formatarEndereco()}</td>
+    `;
+
+    tabelaFornecedores.appendChild(novaLinha);
 }
 
-// Arrays para armazenar os pets
-const cachorros = [];
-const gatos = [];
-
-
-function registroCachorro() {
-    const nome = document.getElementById('nomeCachorro').value;
-    const sexo = document.getElementById('sexoCachorro').value;
-    const dono = document.getElementById('donoCachorro').value;
-    const telefoneDono = document.getElementById('telefoneCachorro').value;
-    const raca = document.getElementById('racaCachorro').value;
-    const cor = document.getElementById('corCachorro').value;
-    const idade = parseFloat(document.getElementById('idadeCachorro').value);
-    const peso = parseFloat(document.getElementById('pesoCachorro').value);
-    const altura = parseFloat(document.getElementById('alturaCachorro').value);
-
-    const cachorro = new Cachorro(nome, sexo, dono, telefoneDono, raca, cor, idade, peso, altura);
-    cachorros.push(cachorro);
-
-    document.getElementById('cachorro-Info').innerHTML = "<h3>Informações do Cachorro:</h3>" + cachorro.getDetails();
+// Função para limpar os campos do formulário após o envio
+function limparFormulario() {
+    document.querySelector('form').reset();
 }
 
-
-function registroGato() {
-    const nome = document.getElementById('nomeGato').value;
-    const sexo = document.getElementById('sexoGato').value;
-    const dono = document.getElementById('donoGato').value;
-    const telefoneDono = document.getElementById('telefoneGato').value;
-    const raca = document.getElementById('racaGato').value;
-    const cor = document.getElementById('corGato').value;
-    const idade = parseFloat(document.getElementById('idadeGato').value);
-    const peso = parseFloat(document.getElementById('pesoGato').value);
-    const altura = parseFloat(document.getElementById('alturaGato').value);
-    
-    const gato = new Gato(nome, sexo, dono, telefoneDono, raca, cor, idade, peso, altura);
-    gatos.push(gato);
-
-    document.getElementById('gato-Info').innerHTML = "<h3>Informações do Gato:</h3>" + gato.getDetails();
-}
+// Função para limpar os dados da tabela e o array de fornecedores
+document.getElementById('LimparDados').addEventListener('click', function() {
+    fornecedores = [];
+    fornecedorId = 1;
+    document.getElementById('tabelaForne').innerHTML = '';
+});
