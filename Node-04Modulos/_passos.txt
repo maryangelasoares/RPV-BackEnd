@@ -1,0 +1,118 @@
+
+Exemplo simples de Módulo em Node.js: Criação de uma Calculadora
+ 
+1. Criar um arquivo denominado index.js e adicionar o código abaixo:
+
+    // Definição de função para soma
+    function calculadoraSoma(valor1, valor2) {
+    return valor1 + valor2;
+    }
+
+    // Definição de função para subtração
+    function calculadoraSubtracao(valor1, valor2) {
+    return valor1 - valor2;
+    }
+
+    // Definição de função para multiplicação
+    function calculadoraMultiplicacao(valor1, valor2) {
+    return valor1 * valor2;
+    }
+
+    // Definição de função para divisão
+    function calculadoraDivisao(valor1, valor2) {
+    // Verifica se o divisor (b) é diferente de zero
+    if (valor2 !== 0) {
+        // Se for diferente de zero, realiza a divisão e retorna o resultado
+        return valor1 / valor2;
+    } else {
+        // Se o divisor for zero, retorna uma mensagem de erro
+        return "Erro: Divisão por zero.";
+    }
+    }
+
+    // Declaração de variáveis para valores a serem usados nas operações
+    var valor1, valor2;
+
+    // Atribuição de valores às variáveis
+    valor1 = 50;
+    valor2 = 10;
+
+    // Saída de texto indicando o início das operações
+    console.log("\nCalculadora NodeJS\n");
+
+    // Saída dos resultados de cada operação
+    console.log("Resultado Soma = " + calculadoraSoma(valor1, valor2));
+    console.log("Resultado Subtração = " + calculadoraSubtracao(valor1, valor2));
+    console.log("Resultado Multiplicação = " + calculadoraMultiplicacao(valor1, valor2));
+    console.log("Resultado Divisão = " + calculadoraDivisao(valor1, valor2));
+
+2. Rodar a aplicação: 
+    No terminal, execute o comando: node index.js
+
+3. Criar um arquivo denominado calculadora.js e adicionar o código abaixo:
+        
+    var descricao = "Calculadora NodeJS";
+
+    // Definição de função para soma
+    function somar(valor1, valor2) {
+    return valor1 + valor2;
+    }
+
+    // Definição de função para subtração
+    function subtrair(valor1, valor2) {
+    return valor1 - valor2;
+    }
+
+    // Definição de função para multiplicação
+    function multiplicar(valor1, valor2) {
+    return valor1 * valor2;
+    }
+
+    // Definição de função para divisão
+    function dividir(valor1, valor2) {
+    // Verifica se o divisor (b) é diferente de zero
+    if (valor2 !== 0) {
+        // Se for diferente de zero, realiza a divisão e retorna o resultado
+        return valor1 / valor2;
+    } else {
+        // Se o divisor for zero, retorna uma mensagem de erro
+        return "Erro: Divisão por zero.";
+    }
+    }
+
+    // Exporta um objeto contendo propriedades e funções relacionadas a calculadora
+    module.exports = {
+    descricao,    // Exporta a propriedade 'descricao'
+    somar,        // Exporta a função 'somar'
+    subtrair,     // Exporta a função 'subtrair'
+    multiplicar,  // Exporta a função 'multiplicar'
+    dividir,      // Exporta a função 'dividir'
+    };
+
+
+4. Modificar o arquivo index.js com o código abaixo:
+
+    // Importa o módulo "calculadora" que contém as funções relacionadas a operações matemáticas
+    var calculadora = require("./calculadora");
+
+    // Declaração de variáveis para valores a serem usados nas operações
+    var valor1, valor2;
+
+    // Atribuição de valores às variáveis
+    valor1 = 50;
+    valor2 = 10;
+
+    // Exibe a descrição da calculadora no console
+    console.log("\n" + calculadora.descricao);
+
+    // Atualiza a descrição da calculadora adicionando uma informação ao final
+    calculadora.descricao += "\nDesenvolvida por Jonatan Eugenio!\n";
+
+    // Exibe a descrição atualizada da calculadora no console
+    console.log("\n" + calculadora.descricao);
+
+    // Executa as operações matemáticas e exibe os resultados no console
+    console.log("Resultado Soma = " + calculadora.somar(valor1, valor2));
+    console.log("Resultado Subtracao = " + calculadora.subtrair(valor1, valor2));
+    console.log("Resultado Multiplicacao = " + calculadora.multiplicar(valor1, valor2));
+    console.log("Resultado Divisao = " + calculadora.dividir(valor1, valor2));

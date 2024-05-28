@@ -1,0 +1,137 @@
+<!-- Utilizando os conceitos de Orientação a Objetos: 
+     Em uma clínica veterinária, é necessário efetuar o cadastro de pets. 
+     Crie um programa que leia os dados desses pets, sendo um cachorro e um gato.  
+     Os dados são: nome, sexo, nome do dono(a), telefone do dono(a), raça, cor, idade, peso e altura. 
+     No final exiba no console todas as informações desses pets. -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cadastro de Pets</title>
+</head>
+
+<body>
+    <h1>PET MANIA 🐾</h1>
+
+    <div class="container">
+
+        <h2>CADASTRO DE PET</h2>
+
+        <form>
+            <div class="info-pets">
+                <label for="nomeDono">Nome do Responsável</label>
+                <input type="text" id="nomeDono" name="nomeDono" placeholder="Nome e Sobrenome" required><br><br>
+            </div>
+
+            <div class="info-pets"></div>
+            <label for="telefoneDono">Telefone do Responsável</label>
+            <input type="tel" id="telefoneDono" name="telefoneDono" placeholder="000 9 9999-9999" required><br><br>
+    </div>
+
+    <div class="info-pets">
+        <label for="pet"></label>
+        <input type="radio" name="pet" id="petCachorro" value="cachorro">Cachorro
+        <input type="radio" name="pet" id="petGato" value="gato">Gato
+    </div><br>
+
+    <div class="info-pets">
+        <label for="nomePet">Nome do Pet</label>
+        <input type="text" id="nomePet" name="nomePet" placeholder="Nome do Pet" required><br><br>
+    </div>
+
+    <div class="info-pets">
+        <fieldset id="endereco">
+            <legend>Endereço</legend>
+            <label for="logradouro">Logradouro:</label>
+            <input type="text" id="logradouro" name="logradouro" placeholder="Rua, Avenida ..." required><br><br>
+
+            <label for="numero">Número:</label>
+            <input type="text" id="numero" name="numero" placeholder="Nº ou S/N" required><br><br>
+
+            <label for="bairro">Bairro:</label>
+            <input type="text" id="bairro" name="bairro" placeholder="Centro" required><br><br>
+
+            <label for="cep">CEP:</label>
+            <input type="text" id="cep" name="cep" pattern="\d{5}-\d{3}" placeholder="00000-000" required><br><br>
+
+            <label for="municipio">Município:</label>
+            <input type="text" id="municipio" name="municipio" placeholder="Cidade" required><br><br>
+
+            <label for="estado">Estado:</label>
+            <input type="text" id="estado" name="estado" placeholder="Estado (Sigla)" required>
+        </fieldset><br><br>
+    </div>
+
+    <div class="info-pets">
+        <label for="sexo">Sexo</label>
+        <select id="sexoPet" name="sexoPet">
+            <option value="" selected disabled>Escolha uma opção</option>
+            <option value="Macho">Macho</option>
+            <option value="Fêmea">Fêmea</option>
+        </select><br><br>
+    </div>
+
+    <div class="info-pets">
+        <label for="raca">Raça</label>
+        <input type="text" id="racaPet" name="racaPet" placeholder="Raça do Pet" required><br><br>
+    </div>
+
+    <div class="info-pets">
+        <label for="corPet">Cor</label>
+        <input type="text" id="corPet" name="corPet" placeholder="Cor do Pet" required><br><br>
+    </div>
+
+    <div class="info-pets">
+        <label for="idadePet">Idade</label>
+        <input type="text" id="idadePet" name="idadePet" placeholder="Idade do Pet" required><br><br>
+    </div>
+
+    <div class="info-pets">
+        <label for="pesoPet">Peso</label>
+        <input type="text" id="pesoPet" name="pesoPet" placeholder="Peso do Pet" required><br><br>
+    </div>
+
+    <div class="info-pets">
+
+        <label for="alturaPet">Altura</label>
+        <input type="text" id="alturaPet" name="alturaPet" placeholder="Altura do Pet" required><br><br>
+    </div>
+    </div>
+    <input type="submit" value="REGISTRAR PET">
+    </form>
+
+    <div class="tabela">
+        <table id="tabelaPet">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nome do Responsável</th>
+                    <th scope="col">Telefone do Responsável</th>
+                    <th scope="col">Endereço</th>
+                    <th scope="col">Pet</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Raça</th>
+                    <th scope="col">Sexo</th>
+                    <th scope="col">Idade</th>
+                    <th scope="col">Peso</th>
+                    <th scope="col">Altura</th>
+                </tr>
+            </thead>
+            <tbody id="tabelaPets">
+                <tr>
+                    <!-- Registros aqui. -->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
