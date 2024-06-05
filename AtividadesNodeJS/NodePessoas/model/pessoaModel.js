@@ -40,7 +40,7 @@ class pessoaModel {
     // Método para ler um cadastro específica por ID
     read(id) {
         // Procura uma vaga de emprego com o ID fornecido no array de vagas de emprego
-        const pessoas = this.pessoa.find((pessoas) => job.id === parseInt(id));
+        const pessoas = this.pessoa.find((pessoas) => pessoas.id === parseInt(id));
         return pessoas;
     }
 
