@@ -1,37 +1,36 @@
-/*
-// Importa o módulo "calculadora" que contém as funções relacionadas a operações matemáticas
-var calculadora = require("./calculadora");
+ /*
+  * Exemplo com Calculadora Básica
+  */
 
-// Declaração de variáveis para valores a serem usados nas operações
-var valor1, valor2;
+ // Importa o módulo "calculadora" que contém as funções relacionadas a operações matemáticas
+ var calculadora = require("./calculadora");
 
-// Atribuição de valores às variáveis
-valor1 = 50;
-valor2 = 10;
+ // Declaração de variáveis para valores a serem usados nas operações
+ var valor1, valor2;
 
-// Exibe a descrição da calculadora no console
-console.log("\n" + calculadora.descricao);
+ // Atribuição de valores às variáveis
+ valor1 = 50;
+ valor2 = 10;
 
-// Atualiza a descrição da calculadora adicionando uma informação ao final
-calculadora.descricao += "\nDesenvolvida por Jonatan Eugenio!\n";
+ // Exibe a descrição da calculadora no console
+ console.log("\n" + calculadora.descricao);
 
-// Exibe a descrição atualizada da calculadora no console
-console.log("\n" + calculadora.descricao);
+ // Atualiza a descrição da calculadora adicionando uma informação ao final
+ calculadora.descricao += "\nDesenvolvida por Jonatan Eugenio!\n";
 
-// Executa as operações matemáticas e exibe os resultados no console
-console.log("Resultado Soma = " + calculadora.somar(valor1, valor2));
-console.log("Resultado Subtracao = " + calculadora.subtrair(valor1, valor2));
-console.log("Resultado Multiplicacao = " + calculadora.multiplicar(valor1, valor2));
-console.log("Resultado Divisao = " + calculadora.dividir(valor1, valor2));
-*/
+ // Exibe a descrição atualizada da calculadora no console
+ console.log("\n" + calculadora.descricao);
+
+ // Executa as operações matemáticas e exibe os resultados no console
+ console.log("Resultado Soma = " + calculadora.somar(valor1, valor2));
+ console.log("Resultado Subtracao = " + calculadora.subtrair(valor1, valor2));
+ console.log("Resultado Multiplicacao = " + calculadora.multiplicar(valor1, valor2));
+ console.log("Resultado Divisao = " + calculadora.dividir(valor1, valor2));
 
 
-/*
- *  ATIVIDADE 1
- *  Utilizando os conhecimentos adquiridos referente à módulos:
- *  Crie uma calculadora de IMC, passando como parametros peso e altura.
- * 
- * */
+ /*
+  * Exemplo com Calculadora de IMC
+  */
 
 
 // Importa o módulo "calculadora" que contém as funções relacionadas a operações matemáticas
@@ -42,7 +41,7 @@ let peso, altura;
 
 // Atribuição de valores às variáveis
 peso = 80;
-altura = 1.80;
+altura = 1.8;
 
 // Atualiza a descrição da calculadora adicionando uma informação ao final
 calculadoraIMC.descricao += "\nDesenvolvida por Jonatan Eugenio!\n";
@@ -54,10 +53,26 @@ console.log("\n" + calculadoraIMC.descricao);
 const retornoIMC = calculadoraIMC.calcularIMC(peso, altura);
 
 if (retornoIMC.status) {
-    console.log("IMC Cálculo = " + retornoIMC.calculo.toFixed(2));
-    console.log("IMC Classificação = " + retornoIMC.classificacao);
-    console.log("Resultado:\n" + retornoIMC.resultado);
-} 
-else {
-    console.log("Ocorreu algum problema:\n" + retornoIMC.resultado);
+  console.log("IMC Cálculo = " + retornoIMC.calculo.toFixed(2));
+  console.log("IMC Classificação = " + retornoIMC.classificacao);
+  console.log("Resultado:\n" + retornoIMC.resultado);
+} else {
+  console.log("Ocorreu algum problema:\n" + retornoIMC.resultado);
 }
+
+/*
+
+ATIVIDADES
+
+ 1. Crie um programa que leia o número de fornecedores a serem cadastrados.  
+    Após isso, o programa deve ler os dados desses fornecedores: 
+    nome, sobrenome, CNPJ (14 digitos), sexo (M-Masculino, F-Feminino, O-Outros), data de nascimento, 
+    endereço (Logradourdo, Número, Bairro, CEP, Municipio e Estado) e telefone ((032) 00000-0000) 
+    e exiba no console todas as informações desses fornecedores.
+
+  2. Em uma clínica veterinária, é necessário efetuar o cadastro de pets. 
+     Crie um programa que leia os dados desses pets, sendo um cachorro e um gato.  
+     Os dados são: nome, sexo, nome do dono(a), telefone do dono(a), raça, cor, idade, peso e altura. 
+     No final exiba no console todas as informações desses pets.
+
+*/
