@@ -1,0 +1,11 @@
+
+Em caso de problemas com o acesso ao banco de dados,
+executar o codigo abaixo no mysql:
+    
+    alter user 'root'@'localhost' identified 
+    with mysql_native_password by 'marysoares'
+
+
+Exemplos de produtos:
+
+{ "id": 2, "nome": "Calça", "quantidade": 5, "unidade_medida": "PC", "preco": 45, "data_cadastro": "2024-06-10T22:45:29.000Z" }
