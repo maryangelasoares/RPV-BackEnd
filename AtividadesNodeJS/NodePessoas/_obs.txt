@@ -1,0 +1,11 @@
+
+Em caso de problemas com o acesso ao banco de dados,
+executar o codigo abaixo no mysql:
+    
+    alter user 'root'@'localhost' identified 
+    with mysql_native_password by 'marysoares'
+
+
+Exemplos de produtos:
+
+ {"id": 1, "nome": "Maryângela Soares", "idade": 30, "cidade": "Laranjal"}

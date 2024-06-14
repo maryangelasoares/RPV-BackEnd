@@ -1,27 +1,35 @@
-// Importa o módulo Router do framework Express
 const Router = require("express").Router;
 
-// Cria uma instância de um roteador do Express
-// O roteador é usado para definir rotas e manipular requisições HTTP em uma aplicação Express
 const router = Router();
 
-// Importa o controlador de cadastro;
 const pessoaController = require ('../controllers/pessoasController');
 
-// Define uma rota GET para listar todas os cadastros;
-router.get ("/pessoa", pessoaController.readList);
+/* => INTEGRAÇÃO API. */
 
-// Define uma rota GET para ler um cadastro específica por ID;
-router.get ("/pessoa/:id", pessoaController.read);
+router.get ("/api/pessoas", pessoaController.apireadlist);
 
-// Define uma rota POST para criar um novo cadastro;
-router.post ("/pessoa", pessoaController.create);
+router.get ("/api/pessoas/:id", pessoaController.apiread);
 
-// Define uma rota PUT para atualizar um cadastro existente por ID;
-router.put ("/pessoa/:id", pessoaController.update);
+router.post ("/api/pessos", pessoaController.apicreate);
 
-// Define uma rota DELETE para excluir um cadastro existente por ID;
-router.delete("/pessoa/:id", pessoaController.delete);
+router.put ("/api/pessoas/:id", pessoaController.apiupdate);
+
+router.delete("/api/pessoas/:id", pessoaController.apidelete);
+
+/* => INTEGRAÇÃO FrontEnd x BackEnd. */
+
+router.get("/pessoas/create", pessoaController.viewCreate);
+
+router.get("/pessoas", pessoaController.viewReadList);
+
+router.get("/pessoas/update/:id", pessoaController.viewUpdate);
+
+router.get("/", pessoaController.viewHomePage);
+
+router.post("/pessoas", pessoaController.create);
+
+router.post("/pessoas/:id", pessoaController.update);
+
+router.get("/pessoas/delete/:id", pessoaController.delete);
 
 module.exports = router;
-

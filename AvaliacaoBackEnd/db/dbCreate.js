@@ -1,4 +1,3 @@
-
 class ProdutoDatabase {
   
   // Método para inicializar a conexão com o banco de dados e iniciar o processo de criação do banco e da tabela

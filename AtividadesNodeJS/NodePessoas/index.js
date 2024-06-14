@@ -4,7 +4,12 @@ const app = express();
 
 const port = 3000;
 
-const router = require('./routers');
+const database = require("./database/index.js");
+database();
+
+app.set('view engine', 'ejs');
+
+const router = require("./routers/index.js");
 
 router(app, express);
 
